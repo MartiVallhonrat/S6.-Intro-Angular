@@ -1,1 +1,6 @@
-<p>"El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial"</p>
+<div *ngFor="let stage of stageJSON">
+    <div class="border border-dark border-3 rounded-pill">
+        {{stage.txt}}
+    </div>
+    <br>
+</div>

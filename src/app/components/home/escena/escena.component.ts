@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import * as data from "../../../JSONdata/JSON1.json";
+
+export interface Stage {
+  txt: string;
+}
+
 
 @Component({
   selector: 'app-escena',
@@ -7,4 +13,5 @@ import { Component } from '@angular/core';
 })
 export class EscenaComponent {
 
+  stageJSON: Stage[] = (data as any).default;
 }

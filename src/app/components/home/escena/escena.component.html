@@ -1,5 +1,13 @@
-<div *ngFor="let stage of stageJSON">
-    <div class="border border-dark border-3 rounded-pill">
+<div class="containerButtons row mt-3 g-0">
+    <div class="col-6">
+        <button type="button" class="btn btn-light btn-lg w-100 border-dark py-4" (click)="prev(this.currentStage)">Anterior</button>
+    </div>
+    <div class="col-6">
+        <button type="button" class="btn btn-light btn-lg w-100 border-dark py-4" (click)="next(this.currentStage)">Següent</button>
+    </div>
+</div>
+<div class="mx-5 mt-5">
+    <div *ngFor="let stage of stageJSON" [ngClass]="{'selected': stage.selected, 'nonselected': !stage.selected}" class="border border-dark border-3 rounded-pill p-3 mt-3 text-center">
         {{stage.txt}}
     </div>
     <br>

@@ -1,0 +1,7 @@
+.selected {
+    background-color: rgb(230, 123, 123);
+}
+
+.nonselected {
+    background-color: rgba(239, 235, 235, 0.673);
+}

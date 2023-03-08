@@ -1,1 +1,6 @@
-<app-escena></app-escena>
+<div *ngIf="this.showEscena == false" class="conainer text-center mt-5">
+    <p class="h2"><strong>Benvinguts al projecte!</strong></p>
+    <p>En aquest projecte s'explicara una història de motivació.</p>
+    <button type="button" class="btn bg-primary text-white btn-lg" (click)="showPage()">COMENÇAR</button>
+</div>
+<app-escena *ngIf="this.showEscena == true"></app-escena>

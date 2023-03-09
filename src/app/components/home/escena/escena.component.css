@@ -5,7 +5,3 @@
 .nonselected {
     background-color: rgba(239, 235, 235, 0.673);
 }
-
-html, body, .img {
-    height: 100%;
-}

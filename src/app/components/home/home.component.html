@@ -1,8 +1,8 @@
-<div>
+<div id="img" [ngStyle]="this.currentImage!==undefined?{'background-image': 'url(../../../assets/img/' + this.currentImage + '.jpg)'}:{'background-image': 'url(../../../assets/img/1.jpg)'}">
     <div *ngIf="this.showEscena == false" class="container text-center pt-5 text-white">
         <p class="h2"><strong>Benvinguts al projecte!</strong></p>
         <p>En aquest projecte s'explicara una història de motivació.</p>
         <button type="button" class="btn bg-primary text-white btn-lg" (click)="showPage()">COMENÇAR</button>
     </div>
-    <app-escena *ngIf="this.showEscena == true"></app-escena>
+    <app-escena (imageEvent)="setImage($event)" *ngIf="this.showEscena == true"></app-escena>
 </div>

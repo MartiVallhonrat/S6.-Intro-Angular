@@ -25,7 +25,7 @@ export class EscenaComponent {
     const isSelected = (object: any) => object.selected == true;
 
     this.currentImage = this.stageJSON[this.stageJSON.findIndex(isSelected)].img 
-    console.log(this.currentImage)
+    this.imageEvent.emit(this.currentImage);
   }
 
   public prev(currentStage: number) {
@@ -33,14 +33,14 @@ export class EscenaComponent {
     this.stageJSON[currentStage].selected = false;
   
     currentStage = currentStage - 1;
+
+    if(currentStage < 0) {
+      currentStage = 0;
+    }
   
     this.stageJSON[currentStage].selected = true;
 
     this.currentStage = currentStage
-
-
-    console.log(this.stageJSON)
-    console.log(this.currentStage)
 
     this.changeImage();
   }
@@ -50,14 +50,14 @@ export class EscenaComponent {
     this.stageJSON[currentStage].selected = false;
   
     currentStage = currentStage + 1;
+
+    if(currentStage >= 4) {
+      currentStage = 3;
+    }
   
     this.stageJSON[currentStage].selected = true;
 
     this.currentStage = currentStage
-
-    console.log(this.stageJSON)
-    console.log(this.currentStage)
-
     this.changeImage();
   }
 

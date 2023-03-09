@@ -24,6 +24,5 @@ export class HomeComponent {
   public setImage(currentImage: any) {
     currentImage = currentImage.toString();
     this.currentImage = currentImage;
-    //document.getElementById("img")?.style.backgroundImage = `url("../../../assets/img/${currentImage}.jpg")`
   }
 }

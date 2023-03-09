@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import * as data from "../../JSONdata/JSON1.json";
 
 export interface Stage {
   txt: string;
@@ -20,7 +19,4 @@ export class HomeComponent {
     this.showEscena = true;
   }
 
-  public changeImage() {
-
-  }
 }

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import * as data from "../../../JSONdata/JSON1.json";
-import { this.changeImage } from "../home.component";
 
 export interface Stage {
   txt: string;
@@ -13,11 +12,21 @@ export interface Stage {
   templateUrl: './escena.component.html',
   styleUrls: ['./escena.component.css']
 })
+
 export class EscenaComponent {
 
   stageJSON: Stage[] = (data as any).default;
 
   public currentStage: number = 0;
+  @Output() public imageEvent = new EventEmitter();
+  public currentImage: any
+
+  public changeImage() {
+    const isSelected = (object: any) => object.selected == true;
+
+    this.currentImage = this.stageJSON[this.stageJSON.findIndex(isSelected)].img 
+    console.log(this.currentImage)
+  }
 
   public prev(currentStage: number) {
 
@@ -29,10 +38,11 @@ export class EscenaComponent {
 
     this.currentStage = currentStage
 
-    changeImage()
 
     console.log(this.stageJSON)
     console.log(this.currentStage)
+
+    this.changeImage();
   }
 
   public next(currentStage: number) {
@@ -47,5 +57,9 @@ export class EscenaComponent {
 
     console.log(this.stageJSON)
     console.log(this.currentStage)
+
+    this.changeImage();
   }
+
+  
 }
